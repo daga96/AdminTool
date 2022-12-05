@@ -33,7 +33,7 @@ export default function Sidebar() {
       </Flex>
       <Flex flexDir="column" m={4}>
         <NavItem link="/dashboard" icon={RxDashboard} title="Dashboard" />
-        <NavItem link="/dashboard" icon={AiOutlineUser} title="Users" />
+        <NavItem link="/users" icon={AiOutlineUser} title="Users" />
         <NavItem link="/dashboard" icon={BsViewList} title="Logs" />
       </Flex>
       <Flex m={4} position="absolute" bottom="0px">

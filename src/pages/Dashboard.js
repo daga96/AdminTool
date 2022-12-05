@@ -307,23 +307,39 @@ export default function Dashboard() {
           <GridItem
             display="flex"
             flexDir="column"
-            textAlign="center"
             colSpan={2}
             rowSpan={1}
             h="300px"
             borderRadius={15}
             backgroundColor="#232429"
-          ></GridItem>
+          >
+            <Box m={8}>
+              <Text as="b" color="#FFFFFF" size="sx">
+                Dashboard
+              </Text>
+              <Text color="#C8C8C8" size="sx">
+                Recent Users
+              </Text>
+            </Box>
+          </GridItem>
           <GridItem
             display="flex"
             flexDir="column"
-            textAlign="center"
             colSpan={3}
             rowSpan={1}
             h="300px"
             borderRadius={15}
             backgroundColor="#232429"
-          ></GridItem>
+          >
+            <Box m={8}>
+              <Text as="b" color="#FFFFFF" size="sx">
+                Dashboard
+              </Text>
+              <Text color="#C8C8C8" size="sx">
+                Top Characters
+              </Text>
+            </Box>
+          </GridItem>
         </Grid>
       </Flex>
     </Flex>
