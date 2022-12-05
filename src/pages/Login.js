@@ -10,22 +10,27 @@ import {
   Box,
   FormControl,
   InputRightElement,
+  Text,
   useToast,
 } from "@chakra-ui/react";
+
+import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleShowPassword = () => setShowPassword(showPassword);
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
     <Flex
       flexDir="column"
       width="100vw"
       height="100vh"
-      backgroundColor="#3c3d52"
+      backgroundColor="#151319"
       justifyContent="center"
       alignItems="center"
     >
@@ -39,40 +44,58 @@ export default function Login() {
           <form>
             <Stack
               spacing={4}
-              p="1rem"
-              backgroundColor="#595d73"
+              p="2rem"
+              backgroundColor="#232429"
               boxShadow="md"
-              borderRadius="2xl"
-              height=" 300px"
+              borderRadius="lg"
+              height="400px"
               justifyContent="center"
             >
-              <Heading color="blue.500" textAlign="center">
-                {process.env.REACT_APP_TITLE}
+              <Text as="b" color="#C8C8C8" textAlign="center" mb="-10px">
+                WELCOME BACK
+              </Text>
+              <Heading color="#FFFFFF" size="lg" textAlign="center">
+                Log into your account
               </Heading>
               <FormControl>
                 <InputGroup display="flex" flexDir="column">
                   <InputLeftElement pointerEvents="none" />
+                  <Text color="#FFFFFF" p="5px">
+                    E-mail or Username
+                  </Text>
                   <Input
+                    color="#C8C8C8"
                     type="text"
-                    placeholder="ID"
+                    placeholder="Enter your E-mail or Username"
+                    _placeholder={{ color: "inherit" }}
                     onChange={(e) => setId(e.target.value)}
                   />
                 </InputGroup>
               </FormControl>
               <FormControl>
-                <InputGroup>
-                  <InputLeftElement pointerEvents="none" color="#C8C8C8" />
+                <InputGroup display="flex" flexDir="column">
+                  <Text color="#FFFFFF" p="5px">
+                    Password
+                  </Text>
+                  <InputLeftElement pointerEvents="none" />
                   <Input
+                    color="#C8C8C8"
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
+                    _placeholder={{ color: "inherit" }}
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                  <InputRightElement width="4.5rem">
-                    <Button
-                      h="1.75rem"
-                      size="sm"
-                      onClick={handleShowPassword}
-                    ></Button>
+                  <InputRightElement
+                    width="4.5rem"
+                    mt="35px"
+                    cursor="pointer"
+                    onClick={handleShowPassword}
+                  >
+                    {showPassword ? (
+                      <AiFillEye color="#C8C8C8" />
+                    ) : (
+                      <AiFillEyeInvisible color="#C8C8C8" />
+                    )}
                   </InputRightElement>
                 </InputGroup>
               </FormControl>
@@ -80,9 +103,9 @@ export default function Login() {
                 borderRadius="md"
                 type="submit"
                 variant="solid"
-                backgroundColor="#3c3d52"
-                color="#C8C8C8"
-                _hover={{ color: "#3c3d52", backgroundColor: "#C8C8C8" }}
+                backgroundColor="#8039c6"
+                color="#FFFFFF"
+                _hover={{ color: "#3c3d52", backgroundColor: "#d9b3ff" }}
                 width="full"
               >
                 Login
