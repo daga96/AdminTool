@@ -23,6 +23,7 @@ import { RiArrowUpSFill } from "react-icons/ri";
 import { Line, Doughnut } from "react-chartjs-2";
 
 import Sidebar from "../components/sidebar/Sidebar";
+import TableBox from "../components/table/Table";
 
 ChartJS.register(
   CategoryScale,
@@ -125,6 +126,11 @@ export default function Dashboard() {
       },
     },
   };
+  const columnsLogin = [
+    { Header: "usrID", accessor: "usr_id" },
+    { Header: "nickname", accessor: "nickname" },
+    { Header: "date", accessor: "sign_date" },
+  ];
 
   return (
     <Flex flexDir="row" width="100vw" height="100vh" backgroundColor="#151319">
@@ -318,8 +324,9 @@ export default function Dashboard() {
                 Dashboard
               </Text>
               <Text color="#C8C8C8" size="sx">
-                Recent Users
+                Recent Logins
               </Text>
+              <TableBox columns={columnsLogin} data={[]} />
             </Box>
           </GridItem>
           <GridItem
