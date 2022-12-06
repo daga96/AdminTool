@@ -24,8 +24,6 @@ import {
   HiChevronLeft,
   HiChevronDoubleRight,
   HiChevronDoubleLeft,
-  HiChevronUp,
-  HiChevronDown,
 } from "react-icons/hi";
 
 export default function TableBox({ columns, data }) {
@@ -117,12 +115,13 @@ export default function TableBox({ columns, data }) {
             </Text>
             <Text flexShrink="0" color="#C8C8C8">
               Go to page:
-            </Text>{" "}
+            </Text>
             <NumberInput
               ml={2}
               mr={8}
               w="150px"
               min={1}
+              color="#C8C8C8"
               max={pageOptions.length}
               onChange={(value) => {
                 const page = value ? value - 1 : 0;
@@ -132,8 +131,8 @@ export default function TableBox({ columns, data }) {
             >
               <NumberInputField />
               <NumberInputStepper>
-                <NumberIncrementStepper />
-                <NumberDecrementStepper />
+                <NumberIncrementStepper color="#C8C8C8" />
+                <NumberDecrementStepper color="#C8C8C8" />
               </NumberInputStepper>
             </NumberInput>
             <Select
