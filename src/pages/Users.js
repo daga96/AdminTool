@@ -1,12 +1,4 @@
-import {
-  Text,
-  Box,
-  Flex,
-  Heading,
-  Grid,
-  GridItem,
-  Icon,
-} from "@chakra-ui/react";
+import { Text, Box, Flex, Heading } from "@chakra-ui/react";
 import Profile from "../components/Profile";
 
 import Sidebar from "../components/sidebar/Sidebar";
@@ -37,16 +29,25 @@ export default function Users() {
             w="50%"
             mr={4}
           >
-            <TableBox
-              columns={columnsUsers}
-              data={[
-                {
-                  usr_id: "U998272",
-                  nickname: "xxdragonxx",
-                  sign_date: "2022-12-06 16:22:00",
-                },
-              ]}
-            />
+            <Box m={4}>
+              <Text as="b" color="#FFFFFF" size="sx">
+                Users
+              </Text>
+              <Text color="#C8C8C8" size="sx">
+                Users Overview
+              </Text>
+
+              <TableBox
+                columns={columnsUsers}
+                data={[
+                  {
+                    usr_id: "U998272",
+                    nickname: "xxdragonxx",
+                    sign_date: "2022-12-06 16:22:00",
+                  },
+                ]}
+              />
+            </Box>
           </Flex>
           <Flex
             borderRadius={15}
@@ -55,7 +56,16 @@ export default function Users() {
             w="25%"
             justifyContent="center"
           >
-            <Profile />
+            <Box m={4}>
+              <Text as="b" color="#FFFFFF" size="sx">
+                Users
+              </Text>
+              <Text color="#C8C8C8" size="sx">
+                User Profile
+              </Text>
+
+              <Profile />
+            </Box>
           </Flex>
         </Flex>
       </Flex>

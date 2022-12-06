@@ -11,13 +11,13 @@ import {
   FormControl,
   InputRightElement,
   Text,
-  useToast,
 } from "@chakra-ui/react";
 
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
 

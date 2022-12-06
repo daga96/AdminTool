@@ -18,7 +18,7 @@ export default function Profile({ name, tag, text, photo }) {
         <Text fontWeight={600} color="#C8C8C8" mb={4}>
           @xxdragonxx
         </Text>
-        <Text textAlign={"center"} color="#C8C8C8" px={3}>
+        <Text textAlign={"justify"} color="#C8C8C8" px={3}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc aliquam,
           ligula sit amet hendrerit auctor, augue ante consequat diam, vitae
           pretium urna ligula quis nunc. Nunc tincidunt consectetur mi, id
