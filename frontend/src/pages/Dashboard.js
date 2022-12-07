@@ -137,7 +137,6 @@ export default function Dashboard() {
 
   return (
     <Box>
-      {" "}
       <Navbar />
       <Flex
         flexDir="row"

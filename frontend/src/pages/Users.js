@@ -6,6 +6,7 @@ import {
   Avatar,
   Button,
   Icon,
+  Divider,
 } from "@chakra-ui/react";
 import Profile from "../components/Profile";
 
@@ -13,7 +14,8 @@ import Sidebar from "../components/sidebar/Sidebar";
 import TableBox from "../components/table/Table";
 
 import { HiTrash } from "react-icons/hi";
-import { AiFillEdit } from "react-icons/ai";
+import { AiFillEdit, AiOutlineUser } from "react-icons/ai";
+import Navbar from "../components/navbar/Navbar";
 export default function Users() {
   const columnsUsers = [
     { Header: "usrID", accessor: "usr_id" },
@@ -30,7 +32,20 @@ export default function Users() {
       ),
     },
     { Header: "nickname", accessor: "nickname" },
-    { Header: "status", accessor: "status" },
+    {
+      Header: "status",
+      accessor: "status",
+      Cell: ({ cell }) => (
+        <Button
+          height="20px"
+          backgroundColor="#68B76D"
+          color="#151319"
+          fontSize="14px"
+        >
+          {cell.value}
+        </Button>
+      ),
+    },
     { Header: "date", accessor: "sign_date" },
     {
       width: 300,
@@ -64,64 +79,77 @@ export default function Users() {
   ];
 
   return (
-    <Flex flexDir="row" width="100vw" height="100vh" backgroundColor="#151319">
-      <Sidebar />
-      <Flex flexDir="column" width="100%" m={4}>
-        <Box m={4}>
-          <Text color="#C8C8C8">Pages / Users</Text>
-          <Heading color="#FFFFFF" size="md" w="100%">
-            Users
-          </Heading>
-        </Box>
-        <Flex flexDir="row">
-          <Flex
-            borderRadius={15}
-            backgroundColor="#232429"
-            p={4}
-            w="50%"
-            mr={4}
-          >
-            <Box m={4}>
-              <Text as="b" color="#FFFFFF" size="sx">
-                Users
-              </Text>
-              <Text color="#C8C8C8" size="sx">
-                Users Overview
-              </Text>
+    <Box>
+      <Navbar />
+      <Flex
+        flexDir="row"
+        width="100vw"
+        height="100vh"
+        backgroundColor="#151319"
+      >
+        <Sidebar />
+        <Flex flexDir="column" width="100%" m={4}>
+          <Flex flexDir="row">
+            <Icon
+              as={AiOutlineUser}
+              color="#4bc0c0"
+              boxSize="50px"
+              mt={4}
+              ml={4}
+            />
 
-              <TableBox
-                columns={columnsUsers}
-                data={[
-                  {
-                    usr_id: "U998272",
-                    nickname: "xxdragonxx",
-                    status: "normal",
-                    sign_date: "2022-12-06 16:22:00",
-                  },
-                ]}
-              />
+            <Box m={4}>
+              <Text color="#C8C8C8">Pages / Users</Text>
+              <Heading color="#FFFFFF" size="md" w="100%">
+                Users
+              </Heading>
             </Box>
           </Flex>
-          <Flex
-            borderRadius={15}
-            backgroundColor="#232429"
-            p={4}
-            w="25%"
-            justifyContent="center"
-          >
-            <Box m={4}>
-              <Text as="b" color="#FFFFFF" size="sx">
-                Users
-              </Text>
-              <Text color="#C8C8C8" size="sx">
-                User Profile
-              </Text>
+          <Divider ml={4} width="500px" borderColor="#C8C8C8" opacity="0.2" />
 
-              <Profile />
-            </Box>
+          <Flex flexDir="row" mt={4}>
+            <Flex backgroundColor="#232429" p={4} w="50%" mr={4}>
+              <Box m={4}>
+                <Text as="b" color="#FFFFFF" size="sx">
+                  Users
+                </Text>
+                <Text color="#C8C8C8" size="sx">
+                  Users Overview
+                </Text>
+
+                <TableBox
+                  columns={columnsUsers}
+                  data={[
+                    {
+                      usr_id: "U998272",
+                      nickname: "xxdragonxx",
+                      status: "normal",
+                      sign_date: "2022-12-06 16:22:00",
+                    },
+                  ]}
+                />
+              </Box>
+            </Flex>
+            <Flex
+              backgroundColor="#232429"
+              p={4}
+              w="25%"
+              justifyContent="center"
+            >
+              <Box m={4}>
+                <Text as="b" color="#FFFFFF" size="sx">
+                  Users
+                </Text>
+                <Text color="#C8C8C8" size="sx">
+                  User Profile
+                </Text>
+
+                <Profile />
+              </Box>
+            </Flex>
           </Flex>
         </Flex>
       </Flex>
-    </Flex>
+    </Box>
   );
 }

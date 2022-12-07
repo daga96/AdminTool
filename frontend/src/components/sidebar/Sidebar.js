@@ -10,7 +10,7 @@ export default function Sidebar() {
     <Flex
       sx={{ position: "sticky" }}
       position="relative"
-      h="90%"
+      h="70%"
       backgroundColor="#232429"
       w="250px"
       flexDir="column"

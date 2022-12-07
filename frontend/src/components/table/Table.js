@@ -52,7 +52,11 @@ export default function TableBox({ columns, data }) {
             {headerGroups.map((headerGroup) => (
               <Tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
-                  <Th {...column.getHeaderProps()}>
+                  <Th
+                    {...column.getHeaderProps()}
+                    color="#FFFFFF"
+                    borderColor="#42444d"
+                  >
                     <Flex alignItems="center">{column.render("Header")}</Flex>
                   </Th>
                 ))}
@@ -66,7 +70,11 @@ export default function TableBox({ columns, data }) {
                 <Tr {...row.getRowProps()}>
                   {row.cells.map((cell) => {
                     return (
-                      <Td {...cell.getCellProps()} color="#C8C8C8">
+                      <Td
+                        {...cell.getCellProps()}
+                        color="#C8C8C8"
+                        borderColor="#42444d"
+                      >
                         {cell.render("Cell")}
                       </Td>
                     );
