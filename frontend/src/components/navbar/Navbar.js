@@ -9,12 +9,7 @@ export default function Navbar() {
       h="60px"
       justify="space-between"
     >
-      <Box
-        backgroundColor="#4bc0c0"
-        w="220px"
-        borderRadius="0  10px 10px  0"
-        p={4}
-      >
+      <Box backgroundColor="#4bc0c0" w="218px" p={4}>
         <Text as="b" fontSize="18px" color="#232429" ml="4">
           ADMIN
         </Text>

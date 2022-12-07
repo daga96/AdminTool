@@ -14,7 +14,6 @@ export default function Sidebar() {
       backgroundColor="#232429"
       w="250px"
       flexDir="column"
-      borderRadius="lg"
       textAlign="center"
     >
       <Flex
