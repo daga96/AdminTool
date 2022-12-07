@@ -41,6 +41,7 @@ export default function Users() {
           backgroundColor="#68B76D"
           color="#151319"
           fontSize="14px"
+          pointerEvents="none"
         >
           {cell.value}
         </Button>
