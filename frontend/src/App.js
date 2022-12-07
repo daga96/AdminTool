@@ -4,6 +4,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
+import Logs from "./pages/Log";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/logs" element={<Logs />} />
           <Route
             path="*"
             element={
