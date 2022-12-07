@@ -2,6 +2,7 @@ import Sidebar from "../components/sidebar/Sidebar";
 
 import { Flex, Box, Text, Heading } from "@chakra-ui/react";
 import TableBox from "../components/table/Table";
+import Navbar from "../components/navbar/Navbar";
 
 export default function Logs() {
   const columnsLogs = [
@@ -22,6 +23,7 @@ export default function Logs() {
 
   return (
     <Flex flexDir="row" width="100vw" height="100vh" backgroundColor="#151319">
+      <Navbar />
       <Sidebar />
       <Flex flexDir="column" width="100%" m={4}>
         <Box m={4}>
