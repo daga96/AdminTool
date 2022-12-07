@@ -6,6 +6,7 @@ import {
   Grid,
   GridItem,
   Icon,
+  Divider,
 } from "@chakra-ui/react";
 
 import {
@@ -24,6 +25,8 @@ import { Line, Doughnut } from "react-chartjs-2";
 
 import Sidebar from "../components/sidebar/Sidebar";
 import TableBox from "../components/table/Table";
+import { RxDashboard } from "react-icons/rx";
+import Navbar from "../components/navbar/Navbar";
 
 ChartJS.register(
   CategoryScale,
@@ -133,222 +136,266 @@ export default function Dashboard() {
   ];
 
   return (
-    <Flex flexDir="row" width="100vw" height="100vh" backgroundColor="#151319">
-      <Sidebar />
-      <Flex flexDir="column" width="100%" m={4}>
-        <Box m={4}>
-          <Text color="#C8C8C8">Pages / Dashboard</Text>
-          <Heading color="#FFFFFF" size="md" w="100%">
-            Dashboard
-          </Heading>
-        </Box>
-
-        <Grid
-          templateColumns="repeat(5, 1fr)"
-          templateRows="repeat(3, 1f)"
-          gap={4}
-          h="800px"
-          w="90%"
-          m={4}
-        >
-          <GridItem
-            display="flex"
-            flexDir="row"
-            colSpan={3}
-            rowSpan={1}
-            h="340px"
-            borderRadius={15}
-            backgroundColor="#232429"
-            p={4}
-          >
+    <Box>
+      {" "}
+      <Navbar />
+      <Flex
+        flexDir="row"
+        width="100vw"
+        height="100vh"
+        backgroundColor="#151319"
+      >
+        <Sidebar />
+        <Flex flexDir="column" width="100%" m={4}>
+          <Flex flexDir="row">
+            <Icon
+              as={RxDashboard}
+              color="#4bc0c0"
+              boxSize="50px"
+              mt={4}
+              ml={4}
+            />
             <Box m={4}>
-              <Text as="b" color="#FFFFFF" size="sx">
+              <Text color="#C8C8C8">Pages / Dashboard</Text>
+              <Heading color="#FFFFFF" size="md" w="100%">
                 Dashboard
-              </Text>
-              <Text color="#C8C8C8" size="sx">
-                Users Overview
-              </Text>
-              <Text color="#C8C8C8" size="sx" mt={8}>
-                Registered Users
+              </Heading>
+            </Box>
+          </Flex>
+          <Divider ml={4} width="500px" borderColor="#C8C8C8" opacity="0.2" />
+          <Grid
+            templateColumns="repeat(5, 1fr)"
+            templateRows="repeat(3, 1f)"
+            gap={4}
+            h="800px"
+            w="90%"
+            m={4}
+          >
+            <GridItem
+              display="flex"
+              flexDir="row"
+              colSpan={3}
+              rowSpan={1}
+              h="340px"
+              backgroundColor="#232429"
+              p={4}
+            >
+              <Box m={4}>
+                <Text as="b" color="#FFFFFF" size="sx">
+                  Dashboard
+                </Text>
+                <Text color="#C8C8C8" size="sx">
+                  Users Overview
+                </Text>
+                <Text color="#C8C8C8" size="sx" mt={8}>
+                  Registered Users
+                </Text>
+                <Heading color="#FFFFFF">1596</Heading>
+                <Text color="#C8C8C8" size="sx" mt={4}>
+                  Guests
+                </Text>
+                <Heading color="#FFFFFF">1102</Heading>
+              </Box>
+              <Line options={optionsLine} data={dataLine} />
+            </GridItem>
+            <GridItem
+              position="relative"
+              colSpan={2}
+              rowSpan={1}
+              h="340px"
+              backgroundColor="#232429"
+              p={4}
+              display="flex"
+              flexDir="column"
+            >
+              <Box m={4}>
+                <Text as="b" color="#FFFFFF" size="sx">
+                  Dashboard
+                </Text>
+                <Text color="#C8C8C8" size="sx">
+                  Users Precentage By Country
+                </Text>
+              </Box>
+              <Box
+                w="380px"
+                h="380px"
+                position="absolute"
+                right="30px"
+                bottom="30px"
+                top="5px"
+              >
+                <Doughnut options={optionsDough} data={dataDough} />
+              </Box>
+            </GridItem>
+
+            <GridItem
+              display="flex"
+              flexDir="column"
+              textAlign="center"
+              colSpan={1}
+              rowSpan={1}
+              w="100%"
+              h="130px"
+              backgroundColor="#232429"
+            >
+              <Text color="#C8C8C8" size="sx" mt={4}>
+                CCU
               </Text>
               <Heading color="#FFFFFF">1596</Heading>
-              <Text color="#C8C8C8" size="sx" mt={4}>
-                Guests
+              <Text
+                color="#C8C8C8"
+                size="sx"
+                mt={4}
+                display="flex"
+                justifyContent="center"
+                alignItems="flex-end"
+              >
+                <Icon as={RiArrowUpSFill} color="#8039c6" boxSize="25px" />
+                2.5%
               </Text>
-              <Heading color="#FFFFFF">1102</Heading>
-            </Box>
-            <Line options={optionsLine} data={dataLine} />
-          </GridItem>
-          <GridItem
-            position="relative"
-            colSpan={2}
-            rowSpan={1}
-            h="340px"
-            borderRadius={15}
-            backgroundColor="#232429"
-            p={4}
-            display="flex"
-            flexDir="column"
-          >
-            <Box m={4}>
-              <Text as="b" color="#FFFFFF" size="sx">
-                Dashboard
-              </Text>
-              <Text color="#C8C8C8" size="sx">
-                Users Precentage By Country
-              </Text>
-            </Box>
-            <Box
-              w="380px"
-              h="380px"
-              position="absolute"
-              right="30px"
-              bottom="30px"
-              top="5px"
+            </GridItem>
+            <GridItem
+              display="flex"
+              flexDir="column"
+              textAlign="center"
+              colSpan={1}
+              rowSpan={1}
+              w="100%"
+              h="130px"
+              backgroundColor="#232429"
             >
-              <Doughnut options={optionsDough} data={dataDough} />
-            </Box>
-          </GridItem>
-
-          <GridItem
-            display="flex"
-            flexDir="column"
-            textAlign="center"
-            colSpan={1}
-            rowSpan={1}
-            w="100%"
-            h="150px"
-            borderRadius={15}
-            backgroundColor="#232429"
-          >
-            <Text color="#C8C8C8" size="sx" mt={4}>
-              CCU
-            </Text>
-            <Heading color="#FFFFFF">1596</Heading>
-            <Text color="#C8C8C8" size="sx" mt={4}>
-              <Icon as={RiArrowUpSFill} />
-              2.5%
-            </Text>
-          </GridItem>
-          <GridItem
-            display="flex"
-            flexDir="column"
-            textAlign="center"
-            colSpan={1}
-            rowSpan={1}
-            w="100%"
-            h="150px"
-            borderRadius={15}
-            backgroundColor="#232429"
-          >
-            <Text color="#C8C8C8" size="sx" mt={4}>
-              PCCU
-            </Text>
-            <Heading color="#FFFFFF">599</Heading>
-            <Text color="#C8C8C8" size="sx" mt={4}>
-              <Icon as={RiArrowUpSFill} />
-              4.5%
-            </Text>
-          </GridItem>
-          <GridItem
-            display="flex"
-            flexDir="column"
-            textAlign="center"
-            colSpan={1}
-            rowSpan={1}
-            w="100%"
-            h="150px"
-            borderRadius={15}
-            backgroundColor="#232429"
-          >
-            <Text color="#C8C8C8" size="sx" mt={4}>
-              DAU
-            </Text>
-            <Heading color="#FFFFFF">123</Heading>
-            <Text color="#C8C8C8" size="sx" mt={4}>
-              <Icon as={RiArrowUpSFill} />
-              3.5%
-            </Text>
-          </GridItem>
-          <GridItem
-            display="flex"
-            flexDir="column"
-            textAlign="center"
-            colSpan={1}
-            rowSpan={1}
-            w="100%"
-            h="150px"
-            borderRadius={15}
-            backgroundColor="#232429"
-          >
-            <Text color="#C8C8C8" size="sx" mt={4}>
-              NUV
-            </Text>
-            <Heading color="#FFFFFF">1596</Heading>
-            <Text color="#C8C8C8" size="sx" mt={4}>
-              <Icon as={RiArrowUpSFill} />
-              2.5%
-            </Text>
-          </GridItem>
-          <GridItem
-            display="flex"
-            flexDir="column"
-            textAlign="center"
-            colSpan={1}
-            rowSpan={1}
-            w="100%"
-            h="150px"
-            borderRadius={15}
-            backgroundColor="#232429"
-          >
-            <Text color="#C8C8C8" size="sx" mt={4}>
-              Recent Users (7 days)
-            </Text>
-            <Heading color="#FFFFFF">262</Heading>
-            <Text color="#C8C8C8" size="sx" mt={4}>
-              <Icon as={RiArrowUpSFill} />
-              0.5%
-            </Text>
-          </GridItem>
-          <GridItem
-            display="flex"
-            flexDir="column"
-            colSpan={2}
-            rowSpan={1}
-            h="300px"
-            borderRadius={15}
-            backgroundColor="#232429"
-          >
-            <Box m={8}>
-              <Text as="b" color="#FFFFFF" size="sx">
-                Dashboard
+              <Text color="#C8C8C8" size="sx" mt={4}>
+                PCCU
               </Text>
-              <Text color="#C8C8C8" size="sx">
-                Recent Logins
+              <Heading color="#FFFFFF">599</Heading>
+              <Text
+                color="#C8C8C8"
+                size="sx"
+                mt={4}
+                display="flex"
+                justifyContent="center"
+                alignItems="flex-end"
+              >
+                <Icon as={RiArrowUpSFill} color="#8039c6" boxSize="25px" />
+                4.5%
               </Text>
-              <TableBox columns={columnsLogin} data={[]} />
-            </Box>
-          </GridItem>
-          <GridItem
-            display="flex"
-            flexDir="column"
-            colSpan={3}
-            rowSpan={1}
-            h="300px"
-            borderRadius={15}
-            backgroundColor="#232429"
-          >
-            <Box m={8}>
-              <Text as="b" color="#FFFFFF" size="sx">
-                Dashboard
+            </GridItem>
+            <GridItem
+              display="flex"
+              flexDir="column"
+              textAlign="center"
+              colSpan={1}
+              rowSpan={1}
+              w="100%"
+              h="130px"
+              backgroundColor="#232429"
+            >
+              <Text color="#C8C8C8" size="sx" mt={4}>
+                DAU
               </Text>
-              <Text color="#C8C8C8" size="sx">
-                Top Characters
+              <Heading color="#FFFFFF">123</Heading>
+              <Text
+                color="#C8C8C8"
+                size="sx"
+                mt={4}
+                display="flex"
+                justifyContent="center"
+                alignItems="flex-end"
+              >
+                <Icon as={RiArrowUpSFill} color="#8039c6" boxSize="25px" />
+                3.5%
               </Text>
-            </Box>
-          </GridItem>
-        </Grid>
+            </GridItem>
+            <GridItem
+              display="flex"
+              flexDir="column"
+              textAlign="center"
+              colSpan={1}
+              rowSpan={1}
+              w="100%"
+              h="130px"
+              backgroundColor="#232429"
+            >
+              <Text color="#C8C8C8" size="sx" mt={4}>
+                NUV
+              </Text>
+              <Heading color="#FFFFFF">1596</Heading>
+              <Text
+                color="#C8C8C8"
+                size="sx"
+                mt={4}
+                display="flex"
+                justifyContent="center"
+                alignItems="flex-end"
+              >
+                <Icon as={RiArrowUpSFill} color="#8039c6" boxSize="25px" />
+                2.5%
+              </Text>
+            </GridItem>
+            <GridItem
+              display="flex"
+              flexDir="column"
+              textAlign="center"
+              colSpan={1}
+              rowSpan={1}
+              w="100%"
+              h="130px"
+              backgroundColor="#232429"
+            >
+              <Text color="#C8C8C8" size="sx" mt={4}>
+                Recent Users (7 days)
+              </Text>
+              <Heading color="#FFFFFF">262</Heading>
+              <Text
+                color="#C8C8C8"
+                size="sx"
+                mt={4}
+                display="flex"
+                justifyContent="center"
+                alignItems="flex-end"
+              >
+                <Icon as={RiArrowUpSFill} color="#8039c6" boxSize="25px" />
+                0.5%
+              </Text>
+            </GridItem>
+            <GridItem
+              display="flex"
+              flexDir="column"
+              colSpan={2}
+              rowSpan={1}
+              h="300px"
+              backgroundColor="#232429"
+            >
+              <Box m={8}>
+                <Text as="b" color="#FFFFFF" size="sx">
+                  Dashboard
+                </Text>
+                <Text color="#C8C8C8" size="sx">
+                  Recent Logins
+                </Text>
+                <TableBox columns={columnsLogin} data={[]} />
+              </Box>
+            </GridItem>
+            <GridItem
+              display="flex"
+              flexDir="column"
+              colSpan={3}
+              rowSpan={1}
+              h="300px"
+              backgroundColor="#232429"
+            >
+              <Box m={8}>
+                <Text as="b" color="#FFFFFF" size="sx">
+                  Dashboard
+                </Text>
+                <Text color="#C8C8C8" size="sx">
+                  Top Characters
+                </Text>
+              </Box>
+            </GridItem>
+          </Grid>
+        </Flex>
       </Flex>
-    </Flex>
+    </Box>
   );
 }

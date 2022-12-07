@@ -1,4 +1,4 @@
-import { Flex, Text, Box, Avatar, Heading } from "@chakra-ui/react";
+import { Flex, Text, Box, Avatar } from "@chakra-ui/react";
 import { AiOutlineUser } from "react-icons/ai";
 import { RxDashboard } from "react-icons/rx";
 import { BsViewList } from "react-icons/bs";
@@ -11,8 +11,6 @@ export default function Sidebar() {
       sx={{ position: "sticky" }}
       position="relative"
       h="90%"
-      pt={4}
-      m={4}
       backgroundColor="#232429"
       w="250px"
       flexDir="column"
@@ -26,12 +24,8 @@ export default function Sidebar() {
         alignItems="flex-start"
         as="nav"
         color="#C8C8C8"
-      >
-        <Heading color="#FFFFFF" size="md" w="100%" textAlign="center">
-          ADMIN
-        </Heading>
-      </Flex>
-      <Flex flexDir="column" m={4}>
+      ></Flex>
+      <Flex flexDir="column" m={4} mt={0}>
         <NavItem link="/dashboard" icon={RxDashboard} title="Dashboard" />
         <NavItem link="/users" icon={AiOutlineUser} title="Users" />
         <NavItem link="/logs" icon={BsViewList} title="Logs" />

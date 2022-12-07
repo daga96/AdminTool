@@ -90,6 +90,8 @@ export default function TableBox({ columns, data }) {
                 isDisabled={!canPrevious}
                 icon={<HiChevronDoubleLeft h={3} w={3} />}
                 mr={4}
+                backgroundColor="#42444d"
+                color="#FFFFFF"
               />
             </Tooltip>
             <Tooltip label="Previous Page">
@@ -98,6 +100,8 @@ export default function TableBox({ columns, data }) {
                 isDisabled={!canPrevious}
                 icon={<HiChevronLeft h={6} w={6} />}
                 mr={4}
+                backgroundColor="#42444d"
+                color="#FFFFFF"
               />
             </Tooltip>
           </Flex>
@@ -158,6 +162,8 @@ export default function TableBox({ columns, data }) {
                 onClick={nextPage}
                 isDisabled={!canNext}
                 icon={<HiChevronRight h={6} w={6} />}
+                backgroundColor="#42444d"
+                color="#FFFFFF"
               />
             </Tooltip>
             <Tooltip label="Last Page">
@@ -166,6 +172,8 @@ export default function TableBox({ columns, data }) {
                 isDisabled={!canNext}
                 icon={<HiChevronDoubleRight h={3} w={3} />}
                 ml={4}
+                backgroundColor="#42444d"
+                color="#FFFFFF"
               />
             </Tooltip>
           </Flex>
